@@ -7,9 +7,9 @@
     "activo": false
   },
   {
-    "title": "Restaurantes",
+    "title": "restaurantes",
     "icon": "pi-building",
-    "url": "",
+    "url": "restaurantes",
     "activo": false
   }
 ]
