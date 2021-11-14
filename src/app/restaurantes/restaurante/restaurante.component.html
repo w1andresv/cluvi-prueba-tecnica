@@ -1,1 +1,58 @@
-<p>restaurante works!</p>
+<div *ngIf="type===actionTable">
+  <p-panel >
+    <ng-template pTemplate="header">
+      Restaurantes
+    </ng-template>
+    <p-table #dt1 [value]="listRestaurants" [loading]="loading" [columns]="cols"
+             styleClass="p-datatable-gridlines" responsiveLayout="scroll" >
+      <ng-template pTemplate="caption">
+        <div class="gird p-fluid flex flex-row">
+
+          <div class="col-6">
+            <div class="p-input-icon-left p-ml-auto">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" (input)="filtro(dt1, $event, 'contains')"
+                     placeholder="Buscar por nombre, dirección"/>
+            </div>
+          </div>
+          <div class="col-2 col-offset-4">
+            <p-button label="Nuevo" (click)="add()"></p-button>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.service_delivery ? 'Si' : 'No'}}</td>
+          <td>{{item.service_take_away ? 'Si' : 'No'}}</td>
+          <td>{{item.service_book ? 'Si' : 'No'}}</td>
+          <td>{{item.service_table ? 'Si' : 'No'}}</td>
+          <td>
+            <button pButton pRipple type="button" icon="pi pi-pencil" (click)="edit(item)"
+                    class="p-button-rounded"></button>
+            <button pButton pRipple type="button" icon="pi pi-eye" (click)="detail(item)"
+                    class="p-button-rounded p-button-secondary"></button>
+            <button pButton pRipple type="button" icon="pi pi-trash" (click)="delete(item._id)"
+                    class="p-button-rounded p-button-danger"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</div>
+<div *ngIf="type===actionAdd || type===actionEdit">
+  <app-restaurant-form (dismiss)="reset($event)" [restaurant]="restaurantSelected"></app-restaurant-form>
+</div>
+<div *ngIf="type===actionDetail">
+  <app-restaurant-detail (dismiss)="reset($event)" [restaurant]="restaurantSelected"></app-restaurant-detail>
+</div>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+

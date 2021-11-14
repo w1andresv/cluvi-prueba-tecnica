@@ -12,6 +12,9 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { InputMaskModule } from 'primeng/inputmask';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 const MODULES = [
   AccordionModule,
@@ -26,7 +29,10 @@ const MODULES = [
   FieldsetModule,
   InputMaskModule,
   MessagesModule,
-  MessageModule
+  MessageModule,
+  TableModule,
+  ToastModule,
+  ConfirmDialogModule
 
 ];
 

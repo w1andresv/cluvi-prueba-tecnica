@@ -1,0 +1,67 @@
+<p-panel >
+  <ng-template pTemplate="header">
+    Detalle restaurant
+  </ng-template>
+  <div class="grid">
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Nombre:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-33">
+      <label>{{restaurant?.name}}</label>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Direccion:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label>{{restaurant?.address}}</label>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Servicio domicilio:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label>{{restaurant?.service_delivery|booleantostring}}</label>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Servicio para llevar:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label>{{restaurant?.service_take_away|booleantostring}}</label>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Servicio reservas:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label >{{restaurant?.service_book|booleantostring}}</label>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Servicio en mesa:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label>{{restaurant?.service_table|booleantostring}}&nbsp;</label>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Servicio en habitación:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label >{{restaurant?.service_room|booleantostring}}</label>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <strong>Numero de sucursales:</strong>
+    </div>
+    <div class="sm:col-12 md:col-3 lg:col-3 xl:col-3">
+      <label>{{restaurant?.number_of_branches}}&nbsp;</label>
+    </div>
+  </div>
+  <p-divider></p-divider>
+  <div class="grid ">
+    <div class="col flex flex-row justify-content-center">
+      <button pButton pRipple type="button" label="Volver" class="p-button-secondary" (click)="cancelar()"></button>
+    </div>
+  </div>
+</p-panel>
