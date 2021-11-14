@@ -8,10 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { PrimengModule } from './primeng.module';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
-@NgModule({
+@NgModule( {
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +24,9 @@ import { PrimengModule } from './primeng.module';
     PrimengModule,
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+  providers: [ MessageService, ConfirmationService ],
+  exports: [],
+  bootstrap: [ AppComponent ]
+} )
+export class AppModule {
+}

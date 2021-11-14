@@ -4,6 +4,7 @@ import { ComponenteBaseClass } from '../../../_utils/componente-base.class';
 import { InstanciaInterface, WizardInterface } from '../../../_models/instancia.interface';
 import { InstanciaService } from '../../../_services/instancia.service';
 import { AppComponent } from '../../../app.component';
+import { MessagesService } from '../../../_utils/messages.service';
 
 declare let google: any;
 
@@ -22,7 +23,7 @@ export class AccountComponent extends ComponenteBaseClass implements OnInit, Aft
 
   constructor( private formBuilder: FormBuilder,
                private instanciaService: InstanciaService,
-               private appComponent: AppComponent ) {
+               private messagesService: MessagesService ) {
     super();
   }
 
@@ -72,10 +73,10 @@ export class AccountComponent extends ComponenteBaseClass implements OnInit, Aft
     this.loading = true;
     this.instanciaService.create( this.formatData( data ) ).subscribe( res => {
       this.limpiarFormulario( this.formulario );
-      this.appComponent.success();
+      this.messagesService.success();
       this.loading = false;
     }, error => {
-      this.appComponent.error();
+      this.messagesService.error();
       this.loading = false;
     } );
 
