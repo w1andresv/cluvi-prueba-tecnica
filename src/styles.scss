@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+.p-button {
+  margin-left: 5px !important;
+}
+.p-buttonset .p-button {
+  margin: 0 !important;
+}

@@ -1,0 +1,26 @@
+$negro: #444444;
+$naranja-positiva: #009dff;
+$ui-primary: #3d4e5a;
+$gris-fondo: #f3f3f4;
+$blanco: #fafafa;
+$borde-gris: #ddd;
+
+.cuida-header {
+  width: 100%;
+  background: $naranja-positiva;
+  -webkit-box-shadow: 0 2px 23px 0 rgba(0, 0, 0, 0.1),
+  0 2px 49px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 23px 0 rgba(0, 0, 0, 0.1),
+  0 2px 49px 0 rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 1;
+  & .positiva-header-img{
+  }
+}
+
+.cuida-header-logo {
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

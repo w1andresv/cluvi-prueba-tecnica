@@ -1,0 +1,13 @@
+<div class="menu">
+  <h3 id="menu-title">Menú</h3>
+  <ul id="menu-list">
+    <li class="menu-item" *ngFor="let item of menu" (click)="redirectTo(item)">
+      <i class="pi {{item.icon}}"></i>
+      <a >{{item.title}}</a>
+    </li>
+  </ul>
+  <div id="menu-date">
+    Fecha y Hora <br />
+    {{ fechaHoraActual | date: "M/d/yy h:mm:ss a" }}
+  </div>
+</div>

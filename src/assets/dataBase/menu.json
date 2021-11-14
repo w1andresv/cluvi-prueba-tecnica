@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Instancias",
+    "icon": "pi-building",
+    "url": "instancia/nueva",
+    "items": [],
+    "activo": false
+  },
+  {
+    "title": "Restaurantes",
+    "icon": "pi-building",
+    "url": "",
+    "activo": false
+  }
+]

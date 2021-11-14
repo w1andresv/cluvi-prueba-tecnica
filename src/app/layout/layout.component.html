@@ -1,0 +1,26 @@
+<div class="cuida-page">
+  <div class="cuida-header">
+    <div #header>
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="cuida-page-contenido">
+    <div class="cuida-menu">
+      <div #menu>
+        <app-menu></app-menu>
+      </div>
+      <label *ngIf="!hasMenu">
+        No hay menu
+      </label>
+    </div>
+    <div class="cuida-content">
+      <div #content>
+        <ng-content select="[cnxTemplate='content']">
+        </ng-content>
+      </div>
+      <label *ngIf="!hasContent">
+        No hay contenido
+      </label>
+    </div>
+  </div>
+</div>
