@@ -2,5 +2,5 @@ export const environment = {
   production: true,
   endpointinstancia: 'https://api.eventsite.me/wizard/',
   endpointrestautant: 'https://crudcrud.com/api/bbb303c18aab4cdf8b6d78077169effa/restaurants',
-  apiGoogleMaps:'AIzaSyDgH06Tl4sVGNxOSHq7n46wLbyxtdW8hQE'
+  apiGoogleMaps:'AIzaSyBYgB5U85_FQvovNgeDJhGVxUpVuP4AmgI'
 };
