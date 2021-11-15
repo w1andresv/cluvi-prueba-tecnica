@@ -17,18 +17,15 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 const MODULES = [
-  AccordionModule,
   InputTextModule,
   ButtonModule,
   RippleModule,
   SelectButtonModule,
-  InputNumberModule,
   KeyFilterModule,
   DividerModule,
   PanelModule,
   FieldsetModule,
   InputMaskModule,
-  MessagesModule,
   MessageModule,
   TableModule,
   ToastModule,

@@ -3,5 +3,131 @@
   <ng-template pTemplate="header">
     Instancia
   </ng-template>
-  <app-account></app-account>
+  <div *ngIf="formulario">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" #form="ngForm">
+      <div class="grid p-fluid">
+        <div class="col">
+          <div class="p-field p-fluid">
+            <label for="username">Nombre</label>
+            <input id="firt_name" type="text" aria-describedby="username-help" pInputText formControlName="first_name"/>
+            <app-error-field [control]="f.first_name"></app-error-field>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-field p-fluid">
+            <label for="lastname">Apellido</label>
+            <input id="lastname" type="text" aria-describedby="username-help" pInputText formControlName="last_name"/>
+            <app-error-field [control]="f.last_name"></app-error-field>
+          </div>
+        </div>
+      </div>
+      <div class="grid p-fluid">
+        <div class="col-2">
+          <div class="p-field p-fluid">
+            <label >Indicativo pais</label>
+            <p-inputMask formControlName="phoneCode" mask="+99?99" placeholder="+99?99"></p-inputMask>
+            <app-error-field [control]="f.phoneCode"></app-error-field>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-field p-fluid">
+            <label >Número telefonico</label>
+            <p-inputMask formControlName="phoneNumber" mask="(999) 999 9999" placeholder="(999) 999 9999"></p-inputMask>
+            <app-error-field [control]="f.phoneNumber"></app-error-field>
+          </div>
+        </div>
+      </div>
+      <div class="grid p-fluid">
+        <div class="col">
+          <div class="p-field p-fluid">
+            <label for="username">Correo electrónico</label>
+            <input id="username" type="email" aria-describedby="username-help" pInputText formControlName="email"/>
+            <app-error-field [control]="f.email"></app-error-field>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-field p-fluid">
+            <label for="username">Contraseña</label>
+            <div class="p-inputgroup">
+            <span class="p-inputgroup-addon" (click)="viewPassword=!viewPassword">
+               <i [ngClass]="viewPassword?'pi pi-eye-slash':'pi pi-eye'"></i>
+            </span>
+              <input [type]="viewPassword?'text':'password'" pInputText formControlName="password">
+            </div>
+            <app-error-field [control]="f.password"></app-error-field>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p-fieldset legend="Restaurante">
+        <div class="grid p-fluid">
+          <div class="col">
+            <div class="p-field p-fluid">
+              <label for="firtname">Nombre</label>
+              <input id="firtname" type="text" aria-describedby="username-help" pInputText formControlName="name"/>
+              <app-error-field [control]="f.name"></app-error-field>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-field p-fluid">
+              <label>Número de sucursales</label>
+              <input id="number_of_branches" type="number" aria-describedby="username-help"
+                     pKeyFilter="int" pInputText formControlName="number_of_branches"/>
+              <app-error-field [control]="f.number_of_branches"></app-error-field>
+            </div>
+          </div>
+        </div>
+        <p-divider align="center">
+          <span class="p-tag">Servicios</span>
+        </p-divider>
+        <div class="grid p-fluid">
+          <div class="col">
+            <label>Domicilios:</label>
+            <p-selectButton formControlName="service_delivery"
+                            [options]="optionsServices"></p-selectButton>
+          </div>
+          <div class="col">
+            <label>Para llevar:</label>
+            <p-selectButton formControlName="service_take_away"
+                            [options]="optionsServices"></p-selectButton>
+          </div>
+          <div class="col">
+            <label>Reservas:</label>
+            <p-selectButton formControlName="service_book"
+                            [options]="optionsServices"></p-selectButton>
+          </div>
+          <div class="col">
+            <label>En mesa:</label>
+            <p-selectButton formControlName="service_table"
+                            [options]="optionsServices"></p-selectButton>
+          </div>
+          <div class="col">
+            <label>En habitacion:</label>
+            <p-selectButton formControlName="service_room"
+                            [options]="optionsServices"></p-selectButton>
+          </div>
+        </div>
+        <p-divider align="center">
+          <span class="p-tag">Dirección</span>
+        </p-divider>
+        <div class="grid p-fluid">
+          <div class="col" id="pac-card">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
+              <input formControlName="address" [required]="true" id="pac-input" (blur)="validateDirection()"
+                     name="pac-input" pInputText type="text" placeholder="Ingrese la dirección"/>
+            </div>
+            <app-error-field [control]="f.address"></app-error-field>
+          </div>
+        </div>
+      </p-fieldset>
+      <br>
+      <div class="grid ">
+        <div class="col flex flex-row justify-content-center">
+          <button pButton pRipple type="submit" label="Guradar" [loading]="loading"></button>
+          <button pButton pRipple type="button" label="Cancelar" class="p-button-secondary" (click)="cancelar()"></button>
+        </div>
+      </div>
+    </form>
+  </div>
 </p-panel>

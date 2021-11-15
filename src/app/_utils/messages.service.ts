@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Message, MessageService } from 'primeng/api';
+import {  MessageService } from 'primeng/api';
 
 @Injectable( {
   providedIn: 'root'
 } )
 export class MessagesService {
-  msgs!: Message[];
 
   constructor( private messageService: MessageService ) {
   }
